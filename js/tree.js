@@ -57,4 +57,8 @@ function addTable(tableName){
 	return table
 }
 
+function createTree(treeArray){
+  $('#tree').treeview({data: treeArray,levels: 2,  showBorder: false });
+}
+
 // addDatabase({"databaseName":"testeBanco", "tables":["tabelaTeste1","tabelaTeste2"]})
