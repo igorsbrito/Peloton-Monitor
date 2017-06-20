@@ -1,0 +1,65 @@
+#tree{
+	margin-top: 5px;
+	margin-left: 5px;
+	position: relative;
+	border: 1px solid #575a57;
+	border-radius: 5px;
+  	position:absolute;
+  	width: 20%;
+  	height: 700px;
+}
+
+.header{
+	background-color: rgb(7, 21, 88);
+	padding: 20px;
+	color: rgb(255,255,255);
+	text-align: center;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 150%;
+}
+
+.comands-tab{
+	background-color: #3c3a42;
+	border-radius: 5px;
+	margin-top: 3px;
+
+}
+
+.container{
+	float: right;
+	width: 80%;
+
+}
+
+#comands{
+	margin-left: 20px;
+}
+
+.action-btn{
+	margin-left: 5px;
+	margin: 3px;
+}
+
+.scripts{
+	margin-top: 5px;
+	border: 1px solid #575a57;
+	border-radius: 10px;
+	height: 325px;
+}
+
+.scripts textarea{
+	border-radius: 10px;
+	height: 100%;
+	width: 100%;
+}
+
+.responses{
+	margin-top: 5px;
+	border: 1px solid #575a57;
+	border-radius: 10px;
+	height: 325px;
+}
+
+.btn-actions{
+
+}

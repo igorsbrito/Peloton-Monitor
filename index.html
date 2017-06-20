@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--<link rel="stylesheet" href="css/reset.css">-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/index.css">
+   
+    <title>Teste</title>
+  </head>
+
+  <body>
+    <div class="header">
+       Peloton Monitor
+    </div>
+
+    <div id="tree"></div>
+
+    <div class="container">
+          <div class="comands-tab">
+      <div id="comands">
+        <ul class="nav nav-pills">
+          <li >
+          <button id="stop" type="button" class="btn btn-default action-btn" aria-label="Left Align">
+            <span class="glyphicon glyphicon-stop" aria-hidden="true"></span>
+          </button>
+        </li>
+          <li>
+            <button id="play" type="button" class="btn btn-default action-btn" aria-label="Left Align">
+              <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li >
+            <button id="pause" type="button" class="btn btn-default action-btn" aria-label="Left Align">
+              <span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
+            </button>
+          </li>
+        
+        </ul>
+      </div>
+    </div> 
+      <div class="scripts">  
+        <textarea id="script"></textarea>
+        
+      </div>
+      <div class="panel panel-default responses">
+        <h2 align="center">Response de scripts</h2>
+      </div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-treeview.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/tree.js"></script>
+    <script src="js/actions.js"></script>
+  </body>
+</html>
