@@ -45,12 +45,16 @@
 	border: 1px solid #575a57;
 	border-radius: 10px;
 	height: 325px;
+
 }
 
 .scripts textarea{
 	border-radius: 10px;
 	height: 100%;
 	width: 100%;
+	font-size: 110%;
+	border :2px solid #FFFFFF;
+
 }
 
 .responses{
@@ -62,4 +66,11 @@
 
 .btn-actions{
 
+}
+
+.table-response{
+	margin-top: 50px;
+	margin-left: 80px;
+	height: 80%;
+	width: 80%;
 }

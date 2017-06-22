@@ -9,7 +9,7 @@
     <title>Peloton Monitor</title>
   </head>
 
-  <body>
+  <body ng-app="myApp" ng-controller="myCtrl">
     <div class="header">
        Peloton Monitor
     </div>
@@ -26,7 +26,7 @@
           </button>
         </li>
           <li>
-            <button id="play" type="button" class="btn btn-default action-btn" aria-label="Left Align">
+            <button id="play" type="button" class="btn btn-default action-btn" aria-label="Left Align" ng-click="tes()">
               <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
             </button>
           </li>
@@ -40,13 +40,38 @@
       </div>
     </div> 
       <div class="scripts">  
-        <textarea id="script"></textarea>
+        <textarea id="script" ng-model="script"></textarea>
         
       </div>
       <div class="panel panel-default responses">
-        <h2 align="center">Response de scripts</h2>
-      </div>
 
+        <div>
+          <div>
+            {{message}}
+          </div>
+          <table class="table table-response">
+            <thead class="thead-default">
+              <tr>
+                <th ng-repeat="attr in attributs">{{attr}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="item in values">
+                <td ng-repeat="i in item">{{i}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--<div ng-repeat="item in items">
+          <p>{{item}}</p>
+          <ul>
+            <li ng-repeat="i in item">{{i}}</li>
+          </ul>
+        </div>
+
+      </div>-->
+
+      <!-- Modal to configure conecction with Pelotondb -->
       <div id="modal-div">
         <div class="modal fade" id="modal-mensagem">
             <div class="modal-dialog">
@@ -82,6 +107,7 @@
       </div>
 
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/bootstrap-treeview.js"></script>
