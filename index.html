@@ -9,19 +9,11 @@
     <title>Peloton Monitor</title>
   </head>
 
-  <body>
+  <body ng-app="myApp" ng-controller="myCtrl">
     <div class="header">
        Peloton Monitor
     </div>
-	<div class="dropdown">
-	  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-		Menu
-		<span class="caret"></span>
-	  </button>
-	  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-		<li><a href="#">Gráficos</a></li>
-	  </ul>
-	</div>
+
     <div id="tree"></div>
 
     <div class="container">
@@ -34,27 +26,56 @@
           </button>
         </li>
           <li>
-            <button id="play" type="button" class="btn btn-default action-btn" aria-label="Left Align">
+            <button id="play" type="button" class="btn btn-default action-btn" aria-label="Left Align" ng-click="play()">
               <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+            </button>
+          </li>
+           <li >
+            <button id="pause" type="button" class="btn btn-default action-btn" aria-label="Left Align" ng-click="newConnection()">
+              <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
             </button>
           </li>
           <li >
             <button id="pause" type="button" class="btn btn-default action-btn" aria-label="Left Align">
-              <span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-equalizer" aria-hidden="true"></span>
             </button>
           </li>
-        
         </ul>
       </div>
     </div> 
       <div class="scripts">  
-        <textarea id="script"></textarea>
+        <textarea id="script" ng-model="script"></textarea>
         
       </div>
       <div class="panel panel-default responses">
-        <h2 align="center">Response de scripts</h2>
-      </div>
 
+        <div>
+          <div>
+            {{message}}
+          </div>
+          <table class="table table-response">
+            <thead class="thead-default">
+              <tr>
+                <th ng-repeat="attr in attributs">{{attr}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="item in values">
+                <td ng-repeat="i in item">{{i}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--<div ng-repeat="item in items">
+          <p>{{item}}</p>
+          <ul>
+            <li ng-repeat="i in item">{{i}}</li>
+          </ul>
+        </div>
+
+      </div>-->
+
+      <!-- Modal to configure conecction with Pelotondb -->
       <div id="modal-div">
         <div class="modal fade" id="modal-mensagem">
             <div class="modal-dialog">
@@ -77,6 +98,10 @@
                             <label for="recipient-name" class="form-control-label">Port N.</label>
                             <input type="text" class="form-control" id="port">
                           </div> 
+                          <div class="form-group">
+                            <label for="recipient-name" class="form-control-label">Password</label>
+                            <input type="text" class="form-control" id="password">
+                          </div> 
 
                         </form>
                      </div>
@@ -90,6 +115,7 @@
       </div>
 
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/bootstrap-treeview.js"></script>

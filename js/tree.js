@@ -34,7 +34,9 @@ function getTree() {
     return tree;
 }
 
-$('#tree').treeview({data: getTree(),levels: 2,  showBorder: false });
+
+$('#tree').treeview({data: getTree(),levels: 2,  showBorder: true });
+
 
 
 //databaseObject = {databaseName: <name_database>, tables:[<name_table_1>,<name_table_2>,<name_table_3>]}
