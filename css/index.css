@@ -69,8 +69,13 @@
 }
 
 .table-response{
-	margin-top: 50px;
+	margin-top: 30px;
 	margin-left: 80px;
 	height: 80%;
 	width: 80%;
+}
+
+.back{
+	margin: 10px;
+
 }

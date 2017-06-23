@@ -1,12 +1,14 @@
-
-var app = angular.module("myApp", []);
-app.controller("myCtrl", function($scope) {
+var app = angular.module("myApp", []).controller("myCtrl",function($scope, $window) {
   /*
   message = "menssagem de erro ao retornar query"
   */
   $scope.values = [];
   $scope.attributs = [];
-  $scope.script
+  $scope.script = "";
+  $scope.connectionName = "";
+  $scope.connectionIp = "localhost";
+  $scope.connectionPort = "5432";
+  $scope.connectionPassword = "12345";
 
 
   //investigar dois valores iguais no mesmo array ocorre um problema
@@ -41,7 +43,9 @@ app.controller("myCtrl", function($scope) {
 
 
   $(function(){
-     $("#modal-mensagem").modal();  
+     if($scope.connectionName == ""){
+      $scope.newConnection();
+     }
   });
 
 
@@ -55,6 +59,12 @@ app.controller("myCtrl", function($scope) {
       dataClients();
     }
     
+  }
+
+  $scope.openGrafics = function(){
+    console.log("TESTE");
+    //location.replace("graficos.html");
+    $window.open("graficos.html");
   }  
 
   $scope.newConnection = function(){
@@ -102,6 +112,7 @@ app.controller("myCtrl", function($scope) {
       ]
       }];
 
-      createTree(treeArray);
+      $('#tree').treeview({data: treeArray ,levels: 3,  showBorder: true });
+      //createTree(treeArray);
   });
 });

@@ -36,7 +36,7 @@
             </button>
           </li>
           <li >
-            <button id="pause" type="button" class="btn btn-default action-btn" aria-label="Left Align">
+            <button id="pause" type="button" class="btn btn-default action-btn" aria-label="Left Align" ng-click="openGrafics()">
               <span class="glyphicon glyphicon-equalizer" aria-hidden="true"></span>
             </button>
           </li>
@@ -53,8 +53,8 @@
           <div>
             {{message}}
           </div>
-          <table class="table table-response">
-            <thead class="thead-default">
+          <table class="table table-response table-bordered">
+            <thead class="class="thead-inverse"">
               <tr>
                 <th ng-repeat="attr in attributs">{{attr}}</th>
               </tr>
@@ -88,19 +88,19 @@
                         <form>
                           <div class="form-group">
                             <label for="recipient-name" class="form-control-label">Connection name</label>
-                            <input type="text" class="form-control" id="connection-name">
+                            <input type="text" class="form-control" id="connection-name" ng-model="connectionName">
                           </div> 
                           <div class="form-group">
                             <label for="recipient-name" class="form-control-label">IP Connection</label>
-                            <input type="text" class="form-control" id="ip">
+                            <input type="text" class="form-control" id="ip" ng-model="connectionIp">
                           </div> 
                           <div class="form-group">
                             <label for="recipient-name" class="form-control-label">Port N.</label>
-                            <input type="text" class="form-control" id="port">
+                            <input type="text" class="form-control" id="port" ng-model="connectionPort">
                           </div> 
                           <div class="form-group">
                             <label for="recipient-name" class="form-control-label">Password</label>
-                            <input type="text" class="form-control" id="password">
+                            <input type="password" class="form-control" id="password" ng-model="connectionPassword">
                           </div> 
 
                         </form>
