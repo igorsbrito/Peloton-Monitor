@@ -14,7 +14,10 @@ app.controller("myCtrl", function($scope) {
     $scope.values = [
       ["1","Igor","1000","2"],
       ["2","Pedro","1500","1"],
-      ["3","Carlos","1500","2"]
+      ["3","Carlos","1500","2"],
+      ["4","Lucas", "1000", "1"],
+      ["5","Jorge", "1300", "2"],
+      ["6", "Fabio", "1500", "1"]
     ];
     $scope.attributs = ["id","name", "salary" ,"department_id"];
   }
@@ -27,6 +30,16 @@ app.controller("myCtrl", function($scope) {
     $scope.attributs = ["id","name", "boss_id"];
   }
 
+  function dataClients(){
+     $scope.values = [
+      ["1","Henrique", "2"],
+      ["2","Lucas","3"],
+      ["3", "Paulo", "4"]
+    ];
+    $scope.attributs = ["id","name", "salesman_id"];
+  }
+
+
   $(function(){
      $("#modal-mensagem").modal();  
   });
@@ -38,6 +51,8 @@ app.controller("myCtrl", function($scope) {
       dataEmployes();
     }else if($scope.script.toLowerCase() == "select * from departments"){
       dataDepartments();
+    }else if($scope.script.toLowerCase() == "select * from clients"){
+      dataClients();
     }
     
   }  
@@ -55,9 +70,18 @@ app.controller("myCtrl", function($scope) {
           nodes:[
             {
               text:"Employees",
+              nodes:[
+              ]
             },
             {
               text:"Departments",
+              nodes:[
+              ]
+            },
+            {
+              text:"Clients",
+              nodes:[
+              ]
             }
           ]
         }
