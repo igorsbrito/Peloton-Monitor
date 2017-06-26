@@ -42,9 +42,8 @@
 
 .scripts{
 	margin-top: 5px;
-	border: 1px solid #575a57;
 	border-radius: 10px;
-	height: 325px;
+	height: 300px;
 
 }
 
@@ -52,8 +51,9 @@
 	border-radius: 10px;
 	height: 100%;
 	width: 100%;
-	font-size: 110%;
+	font-size: 120%;
 	border :2px solid #FFFFFF;
+	outline:none;
 
 }
 
@@ -61,7 +61,7 @@
 	margin-top: 5px;
 	border: 1px solid #575a57;
 	border-radius: 10px;
-	height: 325px;
+	height: 300px;
 }
 
 .btn-actions{
@@ -73,7 +73,10 @@
 	margin-left: 80px;
 	height: 80%;
 	width: 80%;
+
 }
+
+
 
 .back{
 	margin: 10px;

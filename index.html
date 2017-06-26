@@ -14,17 +14,17 @@
        Peloton Monitor
     </div>
 
-    <div id="tree"></div>
+    <div id="tree"></div>s
 
     <div class="container">
-          <div class="comands-tab">
+    <div class="comands-tab navbar navbar-inverse">
       <div id="comands">
         <ul class="nav nav-pills">
           <li >
           <button id="stop" type="button" class="btn btn-default action-btn" aria-label="Left Align">
             <span class="glyphicon glyphicon-stop" aria-hidden="true"></span>
           </button>
-        </li>
+          </li>
           <li>
             <button id="play" type="button" class="btn btn-default action-btn" aria-label="Left Align" ng-click="play()">
               <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
@@ -43,12 +43,10 @@
         </ul>
       </div>
     </div> 
-      <div class="scripts">  
+      <div class="scripts panel panel-default">
         <textarea id="script" ng-model="script"></textarea>
-        
       </div>
       <div class="panel panel-default responses">
-
         <div>
           <div>
             {{message}}
