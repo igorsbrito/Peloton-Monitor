@@ -77,6 +77,7 @@ var app = angular.module("myApp", []).controller("myCtrl",function($scope, $wind
 
     xhr.open("GET", "http://localhost:8080/monitorWeb/banco/employees");
 
+    xhr.withCredentials = false;
     xhr.setRequestHeader('enctype', 'multipart/form-data');
     xhr.setRequestHeader('Access-Control-Allow-Origin','*');
 
