@@ -44,6 +44,7 @@
       </div>
     </div> 
       <div class="scripts panel panel-default">
+        
         <textarea id="script" ng-model="script"></textarea>
       </div>
       <div class="panel panel-default responses">
@@ -51,8 +52,8 @@
           <div>
             {{message}}
           </div>
-          <table class="table table-response table-bordered">
-            <thead class="class="thead-inverse"">
+          <table class="table table-bordered table-striped table-sm">
+            <thead class="thead-inverse">
               <tr>
                 <th ng-repeat="attr in attributs">{{attr}}</th>
               </tr>

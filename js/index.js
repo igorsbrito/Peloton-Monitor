@@ -72,12 +72,37 @@ var app = angular.module("myApp", []).controller("myCtrl",function($scope, $wind
   }
 
   $scope.reqEmployees = function(){
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "http://localhost:8080/monitorWeb/banco/employees");
+
+    xhr.setRequestHeader('enctype', 'multipart/form-data');
+
+    xhr.onload = function(){
+      if (this.status == 200) {
+          var response = this.responseText;
+          var resp = JSON.parse(response);
+          console.log(resp);
+
+      }else{
+        console.log(this.status);
+        console.log(this.responseText);
+
+      }
+    }
+
+    xhr.send();
+  }
+
+
+  /*$scope.reqEmployees = function(){
     $http.get("http://localhost:8080/monitorWeb/banco/employees").then( function(json) {
       console.log(json);
     }, function(erro) {
       console.log("The request failed with response " + erro);
     });
-  }
+  }*/
 
   $("#btnConnection").click(function(){
 
