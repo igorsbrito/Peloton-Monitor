@@ -1,4 +1,4 @@
-var app = angular.module("myApp", []).controller("myCtrl",function($scope, $window) {
+var app = angular.module("myApp", []).controller("myCtrl",function($scope, $window, $http) {
   /*
   message = "menssagem de erro ao retornar query"
   */
@@ -72,12 +72,10 @@ var app = angular.module("myApp", []).controller("myCtrl",function($scope, $wind
   }
 
   $scope.reqEmployees = function(){
-    $http.get("http://localhost:8080/monitorWeb/banco/employees")
-    .success(function(json) {
+    $http.get("http://localhost:8080/monitorWeb/banco/employees").then( function(json) {
       console.log(json);
-    })
-    .error(function(response, status) {
-      console.log("The request failed with response " + response + " and status code " + status);
+    }, function(erro) {
+      console.log("The request failed with response " + erro);
     });
   }
 
