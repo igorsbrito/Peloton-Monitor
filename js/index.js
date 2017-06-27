@@ -71,6 +71,16 @@ var app = angular.module("myApp", []).controller("myCtrl",function($scope, $wind
     $("#modal-mensagem").modal(); 
   }
 
+  $scope.reqEmployees = function(){
+    $http.get("http://localhost:8080/monitorWeb/banco/employees")
+    .success(function(json) {
+      console.log(json);
+    })
+    .error(function(response, status) {
+      console.log("The request failed with response " + response + " and status code " + status);
+    });
+  }
+
   $("#btnConnection").click(function(){
 
     var connectionName  = $("#connection-name").val();
