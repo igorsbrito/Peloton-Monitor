@@ -4,11 +4,11 @@ function request(){
     xhr.open("GET", "http://localhost:8080/monitorWeb/banco/employees");
 
     xhr.withCredentials = true;
-    //xhr.setRequestHeader('enctype', 'multipart/form-data');
+    xhr.setRequestHeader('enctype', 'multipart/form-data');
     xhr.setRequestHeader('Access-Control-Allow-Origin','*');
-    //xhr.setRequestHeader('Access-Control-Allow-Origin','http://localhost:8080/monitorWeb/banco/employees');
+    //xhr.setRequestHeader('Access-Control-Allow-Origin:','http://localhost:8080/monitorWeb/banco/employees');
     xhr.setRequestHeader('Access-Control-Allow-Credentials','true');
-    xhr.setRequestHeader('Access-Control-Allow-Headers", "Origin, X-Request-Width, Content-Type, Accept');
+    xhr.setRequestHeader('Access-Control-Allow-Headers', 'Origin, X-Request-Width, Content-Type, Accept');
 
     xhr.onload = function(){
       if (this.status == 200) {
