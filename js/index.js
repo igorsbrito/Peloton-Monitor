@@ -80,8 +80,8 @@ var app = angular.module("myApp", []).controller("myCtrl",function($scope, $wind
     xhr.withCredentials = true;
     xhr.setRequestHeader('enctype', 'multipart/form-data');
     xhr.setRequestHeader('Access-Control-Allow-Origin','*');
-    xhr.setRequestHeader('Access-Control-Allow-Origin','http://localhost:8080/monitorWeb/banco/employees');
-    xhr.setRequestHeader('Access-Control-Allow-Credentials','true');
+    //xhr.setRequestHeader('Access-Control-Allow-Origin','http://localhost:8080/monitorWeb/banco/employees');
+    //xhr.setRequestHeader('Access-Control-Allow-Credentials','true');
     xhr.setRequestHeader('Access-Control-Allow-Headers", "Origin, X-Request-Width, Content-Type, Accept');
 
     xhr.onload = function(){
