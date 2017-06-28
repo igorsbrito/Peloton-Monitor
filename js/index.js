@@ -1,3 +1,33 @@
+function request(){
+    var xhr = new createCORSRequest();
+
+    xhr.open("GET", "http://localhost:8080/monitorWeb/banco/employees");
+
+    xhr.withCredentials = true;
+    //xhr.setRequestHeader('enctype', 'multipart/form-data');
+    xhr.setRequestHeader('Access-Control-Allow-Origin','*');
+    //xhr.setRequestHeader('Access-Control-Allow-Origin','http://localhost:8080/monitorWeb/banco/employees');
+    xhr.setRequestHeader('Access-Control-Allow-Credentials','true');
+    xhr.setRequestHeader('Access-Control-Allow-Headers", "Origin, X-Request-Width, Content-Type, Accept');
+
+    xhr.onload = function(){
+      if (this.status == 200) {
+          var response = this.responseText;
+          var resp = JSON.parse(response);
+          console.log(resp);
+
+      }else{
+        console.log(this.status);
+        console.log(this.responseText);
+
+      }
+    }
+
+    xhr.send();
+
+
+}
+
 var app = angular.module("myApp", []).controller("myCtrl",function($scope, $window, $http) {
   /*
   message = "menssagem de erro ao retornar query"
@@ -72,32 +102,7 @@ var app = angular.module("myApp", []).controller("myCtrl",function($scope, $wind
   }
 
   $scope.reqEmployees = function(){
-
-    var xhr = new XMLHttpRequest();
-
-    xhr.open("GET", "http://localhost:8080/monitorWeb/banco/employees");
-
-    xhr.withCredentials = true;
-    xhr.setRequestHeader('enctype', 'multipart/form-data');
-    xhr.setRequestHeader('Access-Control-Allow-Origin','*');
-    //xhr.setRequestHeader('Access-Control-Allow-Origin','http://localhost:8080/monitorWeb/banco/employees');
-    //xhr.setRequestHeader('Access-Control-Allow-Credentials','true');
-    xhr.setRequestHeader('Access-Control-Allow-Headers", "Origin, X-Request-Width, Content-Type, Accept');
-
-    xhr.onload = function(){
-      if (this.status == 200) {
-          var response = this.responseText;
-          var resp = JSON.parse(response);
-          console.log(resp);
-
-      }else{
-        console.log(this.status);
-        console.log(this.responseText);
-
-      }
-    }
-
-    xhr.send();
+	request();
   }
 
 
