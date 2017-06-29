@@ -4,7 +4,7 @@
   	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <!--<link rel="stylesheet" href="css/reset.css">-->
     <link rel="stylesheet" href="css/bootstrap.css">
-    <!--<link rel="stylesheet" href="css/index.css"> -->
+    <link rel="stylesheet" href="css/index.css"> 
     <ui:include src="moda.html" />
     <title>Peloton Monitor</title>
   </head>
@@ -48,12 +48,15 @@
 					    		<textarea id="script" class="form-control input-lg" ng-model="script"  spellcheck="false"></textarea>
 
 					    		<br/>
+					    		<button id="submitFormula" class="btn btn-danger" ng-click="submitFormula()"><!-- <span class="glyphicon glyphicon-stop" aria-hidden="true"></span>--> Stop</button>
+			    				<button id="cleanScope" class="btn btn-success" ng-click="play()"> <!--<span class="glyphicon glyphicon-play" aria-hidden="true"></span> --> Execute Query</button>
+			    				<hr />
 
 					    		<div class="lead">OUTPUT</div>
 								<div class="scripts panel panel-default ">
 
 									<div>
-							          <div>
+							          <div class="error-msg">
 							            {{message}}
 							          </div>
 							          <table class="table table-bordered table-striped table-sm">
@@ -70,10 +73,9 @@
 							          </table>
 							        </div>
 								</div>
-								<hr />
+								
 							</div>
-							<button id="submitFormula" class="btn btn-danger" ng-click="submitFormula()"> <span class="glyphicon glyphicon-stop" aria-hidden="true"></span></button>
-			    				<button id="cleanScope" class="btn btn-success" ng-click="play()"> <span class="glyphicon glyphicon-play" aria-hidden="true"></span> </button>
+							
 						</div>	
 					</div>
 				</div>

@@ -40,6 +40,7 @@ var app = angular.module("myApp", []).controller("myCtrl",function($scope, $wind
   /*
   message = "menssagem de erro ao retornar query"
   */
+  $scope.message = "";
   $scope.values = [];
   $scope.attributs = [];
   $scope.script = "";
@@ -88,6 +89,10 @@ var app = angular.module("myApp", []).controller("myCtrl",function($scope, $wind
 
 
   $scope.play =function(){
+    $scope.values = [];
+    $scope.attributs = [];
+    $scope.menssagem = "";
+
     console.log("TESTANDO");
     if($scope.script.toLowerCase() == "select * from employees"){
       dataEmployes();
@@ -95,6 +100,8 @@ var app = angular.module("myApp", []).controller("myCtrl",function($scope, $wind
       dataDepartments();
     }else if($scope.script.toLowerCase() == "select * from clients"){
       dataClients();
+    }else{
+      $scope.message= "Essa função ainda não está disponivel";
     }
     
   }
