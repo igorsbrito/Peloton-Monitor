@@ -1,7 +1,7 @@
 function request(){
     var xhr = new createCORSRequest();
 
-    xhr.open("GET", "http://10.0.2.15:8080/monitorWeb/banco/employees");
+    xhr.open("GET", "http://localhost:8080/monitorWeb/banco/employees");
 
     xhr.withCredentials = true;
     xhr.setRequestHeader('enctype', 'multipart/form-data');
@@ -10,26 +10,18 @@ function request(){
     //xhr.setRequestHeader('Access-Control-Allow-Credentials','true');
     xhr.setRequestHeader('Access-Control-Allow-Headers', 'Origin, X-Request-Width, Content-Type, Accept');
 
+    xhr.onload = function(){
+      if (this.status == 200) {
+          var response = this.responseText;
+          var resp = JSON.parse(response);
+          console.log(resp);
 
+      }else{
+        console.log(this.status);
+        console.log(this.responseText);
 
-    xhr.withCredentials = false;
-    //xhr.responseType = 'json';
-    // Response handlers.
-    xhr.onload = function() {
-      //var text = xhr.responseText;
-      
-      var response = this.responseText;
-      var resp = JSON.parse(response);
-      console.log(resp);
-      
-    };
-
-
-    xhr.onerror = function() {
-      alert("Error");
-      console.log(this.status);
-      console.log(this.responseText);
-    };
+      }
+    }
 
     xhr.send();
 
